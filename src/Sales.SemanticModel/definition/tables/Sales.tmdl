@@ -1,6 +1,10 @@
 table Sales
 	lineageTag: 97143e5b-7736-4fcb-8042-26b92b1f5684
 
+   	measure Cost = SUMX ( Sales, Sales[Quantity] * Sales[Unit Cost] )
+		formatString: $ #,##0
+		lineageTag: 3e5cb67e-a411-476f-ad34-7ec10dfd084d
+
 	measure '# Customers (w/ Sales)' = DISTINCTCOUNT('Sales'[CustomerKey])
 		formatString: #,##0
 		lineageTag: 4ec872f0-a42d-4aa9-bf6b-1ca7c4916336
